@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putunbr_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpons <tpons@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/05 14:08:24 by tpons             #+#    #+#             */
-/*   Updated: 2019/11/13 18:16:35 by tpons            ###   ########.fr       */
+/*   Created: 2019/11/13 10:35:44 by tpons             #+#    #+#             */
+/*   Updated: 2019/11/13 10:38:11 by tpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
-# include <stdarg.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include "./Libft/libft.h"
+#include "libft.h"
 
-int		ft_printf(const char *input, ...);
-void	parser(const char *input, va_list list);
+void	ft_putunbr_fd(unsigned int n, int fd)
+{
+	char	c;
 
-#endif
+	if (n < 10)
+	{
+		c = n + '0';
+		write(fd, &c, 1);
+	}
+	else
+	{
+		ft_putnbr_fd(n / 10, fd);
+		c = (n % 10) + '0';
+		write(fd, &c, 1);
+	}
+}

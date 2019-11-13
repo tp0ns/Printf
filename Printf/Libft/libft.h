@@ -6,7 +6,7 @@
 /*   By: tpons <tpons@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 14:32:57 by tpons             #+#    #+#             */
-/*   Updated: 2019/10/17 18:36:38 by tpons            ###   ########.fr       */
+/*   Updated: 2019/11/13 12:35:11 by tpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,8 @@ void				ft_lstclear(t_list **lst, void (*del)(void*));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 					void (*del)(void *));
+
+void				ft_putnbr_base(unsigned int nbr, char *base);
+void				ft_putunbr_fd(unsigned int n, int fd);
 
 #endif
