@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   char_conv.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpons <tpons@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/06 10:13:52 by tpons             #+#    #+#             */
-/*   Updated: 2019/11/18 19:33:43 by tpons            ###   ########.fr       */
+/*   Created: 2019/11/18 16:14:19 by tpons             #+#    #+#             */
+/*   Updated: 2019/11/18 19:32:43 by tpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
-int		main(void)
+int	char_conv(t_flags flags, va_list args)
 {
-	char				*str;
-	char				*strb;
-
-	str = "Coucou comment ca va";
-	strb = "Bien et toi ?";
-	printf("|%-50c|\n", 'c');
-	ft_printf("|%-50c|\n", 'c');
-	return (0);
+	if(flags.minus && flags.width > 0)
+	{
+		ft_putchar_fd(va_arg(args, int), 1);
+		ft_adjust(flags.width - 1, ' ');
+		return (flags.width + 1);
+	}
+	else if (!flags.minus && flags.width > 0)
+		ft_adjust(flags.width - 1, ' ');
+	ft_putchar_fd(va_arg(args, int), 1);
+	return(flags.width + 1);
 }
