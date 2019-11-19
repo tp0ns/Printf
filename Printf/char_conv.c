@@ -6,7 +6,7 @@
 /*   By: tpons <tpons@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 16:14:19 by tpons             #+#    #+#             */
-/*   Updated: 2019/11/18 19:32:43 by tpons            ###   ########.fr       */
+/*   Updated: 2019/11/19 13:52:15 by tpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 int	char_conv(t_flags flags, va_list args)
 {
-	if(flags.minus && flags.width > 0)
+	if (flags.minus && flags.width > 1)
 	{
 		ft_putchar_fd(va_arg(args, int), 1);
 		ft_adjust(flags.width - 1, ' ');
 		return (flags.width + 1);
 	}
-	else if (!flags.minus && flags.width > 0)
+	else if (!flags.minus && flags.width > 1)
 		ft_adjust(flags.width - 1, ' ');
 	ft_putchar_fd(va_arg(args, int), 1);
-	return(flags.width + 1);
+	return (flags.width + 1);
 }

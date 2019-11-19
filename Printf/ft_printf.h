@@ -6,12 +6,12 @@
 /*   By: tpons <tpons@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 14:08:24 by tpons             #+#    #+#             */
-/*   Updated: 2019/11/18 18:59:31 by tpons            ###   ########.fr       */
+/*   Updated: 2019/11/19 14:35:22 by tpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -38,5 +38,7 @@ int					is_flag(char c);
 int					parser_conv(char input, t_flags flags, va_list args);
 int					ft_adjust(int width, char c);
 int					char_conv(t_flags flags, va_list args);
+int					str_conv(t_flags flags, va_list args);
+int					str_precision(char *str, int len, int precision, int mod);
 
 #endif

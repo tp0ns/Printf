@@ -6,7 +6,7 @@
 /*   By: tpons <tpons@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 14:57:34 by tpons             #+#    #+#             */
-/*   Updated: 2019/11/18 19:32:43 by tpons            ###   ########.fr       */
+/*   Updated: 2019/11/19 13:52:16 by tpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,20 @@ int	parser_conv(char input, t_flags flags, va_list args)
 	rtn = 0;
 	if (input == 'c')
 		rtn = char_conv(flags, args);
-	// else if (input == 's')
-	// 	rtn = str_conv(flags, args, rtn);
+	else if (input == 's')
+		rtn = str_conv(flags, args);
 	// else if (input == 'p')
-	// 	rtn = pos_conv(flags, args, rtn);
+	// 	rtn = pos_conv(flags, args);
 	// else if (input == 'd' || input == 'i')
-	// 	rtn = int_conv(flags, args, rtn);
+	// 	rtn = int_conv(flags, args);
 	// else if (input == 'u')
-	// 	rtn = unsign_conv(flags, args, rtn);
+	// 	rtn = unsign_conv(flags, args);
 	// else if (input == 'x')
-	// 	rtn = hexa_conv(flags, args, rtn, "0123456789abcdef");
+	// 	rtn = hexa_conv(flags, args, "0123456789abcdef");
 	// else if (input == 'X')
-	// 	rtn = hexa_conv(flags, args, rtn, "0123456789ABCDEF");
+	// 	rtn = hexa_conv(flags, args, "0123456789ABCDEF");
 	// else if (input == '%')
-	// 	rtn = char_conv(flags, args, rtn);
+	// 	rtn = char_conv(flags, args);
 	return (rtn);
 }
 
@@ -48,6 +48,7 @@ int	ft_adjust(int width, char c)
 	}
 	return (i);
 }
+
 /*void	parser(const char *input, va_list args)
 {
 	int nb;
