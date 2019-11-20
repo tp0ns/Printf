@@ -6,7 +6,7 @@
 /*   By: tpons <tpons@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 14:57:34 by tpons             #+#    #+#             */
-/*   Updated: 2019/11/19 13:52:16 by tpons            ###   ########.fr       */
+/*   Updated: 2019/11/19 15:13:24 by tpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 int	parser_conv(char input, t_flags flags, va_list args)
 {
 	int rtn;
+	int nb;
 
 	rtn = 0;
+	nb = 0;
 	if (input == 'c')
 		rtn = char_conv(flags, args);
 	else if (input == 's')
@@ -25,8 +27,8 @@ int	parser_conv(char input, t_flags flags, va_list args)
 	// 	rtn = pos_conv(flags, args);
 	// else if (input == 'd' || input == 'i')
 	// 	rtn = int_conv(flags, args);
-	// else if (input == 'u')
-	// 	rtn = unsign_conv(flags, args);
+	else if (input == 'u')
+		rtn = unsign_conv(flags, args);
 	// else if (input == 'x')
 	// 	rtn = hexa_conv(flags, args, "0123456789abcdef");
 	// else if (input == 'X')

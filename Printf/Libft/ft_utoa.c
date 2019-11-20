@@ -6,7 +6,7 @@
 /*   By: tpons <tpons@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 13:19:43 by tpons             #+#    #+#             */
-/*   Updated: 2019/11/20 11:19:11 by tpons            ###   ########.fr       */
+/*   Updated: 2019/11/20 11:47:59 by tpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static char		*fill_string(char *str, unsigned int n, int l, long nbr)
 	return (str);
 }
 
-char			*ft_itoa(unsigned int n)
+char			*ft_utoa(unsigned int n)
 {
 	char	*str;
 	int		l;
