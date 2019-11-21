@@ -6,7 +6,7 @@
 /*   By: tpons <tpons@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 16:40:02 by tpons             #+#    #+#             */
-/*   Updated: 2019/11/20 11:57:25 by tpons            ###   ########.fr       */
+/*   Updated: 2019/11/20 13:59:04 by tpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_putstr_fd(char *s, int fd)
 
 	i = 0;
 	if (!s)
-		return ;
+		return (i);
 	while (s[i])
 		write(fd, &s[i++], 1);
 	return (i);
