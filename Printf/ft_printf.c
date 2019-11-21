@@ -6,7 +6,7 @@
 /*   By: tpons <tpons@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 14:06:44 by tpons             #+#    #+#             */
-/*   Updated: 2019/11/19 13:52:14 by tpons            ###   ########.fr       */
+/*   Updated: 2019/11/20 17:54:42 by tpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int		ft_printf(const char *input, ...)
 			i += flags.advance + 1;
 		}
 		write(1, &input[i], 1);
+		rtn++;
 		i++;
 	}
 	return (rtn);
