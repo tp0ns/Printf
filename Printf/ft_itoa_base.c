@@ -1,39 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpons <tpons@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/06 10:13:52 by tpons             #+#    #+#             */
-/*   Updated: 2019/11/22 17:06:44 by tpons            ###   ########.fr       */
+/*   Created: 2019/11/22 13:53:37 by tpons             #+#    #+#             */
+/*   Updated: 2019/11/22 17:28:38 by tpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "ft_printf.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-
-
-void	ft_putstr(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		write(1, &str[i++], 1);
-}
-
-size_t	ft_strlen(const char *s)
-{
-	size_t i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
+#include "ft_printf.h"
 
 static int	num_length(unsigned int n, int b)
 {
@@ -51,7 +28,7 @@ static int	num_length(unsigned int n, int b)
 int		put_nbr(unsigned int nb, char *base, int b, char *str, int l)
 {
 	if (l == 0)
-	{	
+	{
 		str[l] = base[nb % b];
 		return (0);
 	}
@@ -60,10 +37,6 @@ int		put_nbr(unsigned int nb, char *base, int b, char *str, int l)
 		str[l] = base[nb % b];
 		return (put_nbr(nb / b, base, b, str, --l));
 	}
-	// if (nb >= b)
-	// 	put_nbr(nb / b, base, b, str++);
-	// *str = base[nb % b];
-	// printf("|%s|", str); //psidnfpsinfidnf
 }
 
 char		*ft_itoa_base(unsigned int nbr, char *base)
@@ -82,21 +55,3 @@ char		*ft_itoa_base(unsigned int nbr, char *base)
 	put_nbr(nbr, base, b, str, l - 1);
 	return (str);
 }
-
-int	main()
-{
-	printf("|%s|", ft_itoa_base(42, "01"));
-	return (0);
-}
-
-// int		main(void)
-// {
-// 	char				*str;
-// 	char				*strb;
-
-// 	str = "Coucou comment ca va";
-// 	strb = "Bien et toi ?";
-// 	//    printf("[%-05d]", -42);
-// 	// ft_printf("[%-05d]", -42);
-// 	return (0);
-// }

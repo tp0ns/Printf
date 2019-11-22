@@ -6,7 +6,7 @@
 /*   By: tpons <tpons@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 14:08:24 by tpons             #+#    #+#             */
-/*   Updated: 2019/11/22 13:33:16 by tpons            ###   ########.fr       */
+/*   Updated: 2019/11/22 14:20:25 by tpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,11 @@ int					int_conv(t_flags flags, va_list args);
 int					int_minus(t_flags flags, int len, char *str, int nb);
 int					int_precision(t_flags flags, int len, int nb);
 int					int_adjust(t_flags flags, int len, int nb);
+
+int					hexa_conv(t_flags flags, va_list args, char *str);
+int					hexa_minus(t_flags flags, int len, char *str);
+int					hexa_precision(int precision, int len);
+int					hexa_adjust(t_flags flags, int len);
+char				*ft_itoa_base(unsigned int nbr, char *base);
 
 #endif
