@@ -6,7 +6,7 @@
 /*   By: tpons <tpons@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 14:08:24 by tpons             #+#    #+#             */
-/*   Updated: 2019/11/20 11:46:12 by tpons            ###   ########.fr       */
+/*   Updated: 2019/11/22 11:24:09 by tpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,13 @@ int					str_conv(t_flags flags, va_list args);
 int					str_precision(char *str, int len, int precision, int mod);
 
 int					unsign_conv(t_flags flags, va_list args);
+int					unsign_minus(t_flags flags, int len, char *str);
+int					unsign_precision(int precision, int len);
+int					unsign_adjust(t_flags flags, int len);
+
+int					int_conv(t_flags flags, va_list args);
+int					int_minus(t_flags flags, int len, char *str, int nb);
+int					int_precision(t_flags flags, int len, int nb);
+int					int_adjust(t_flags flags, int len, int nb);
 
 #endif

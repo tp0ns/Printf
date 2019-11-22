@@ -5,7 +5,7 @@ NAME = libftprintf.a
 FLAGS = -Wall -Wextra -Werror -c
 
 SRCS =	ft_printf.c flags_utils.c conv_utils.c char_conv.c str_conv.c \
-		#hexa_conv.c int_conv.c percent_conv.c pos_conv.c unsign_conv.c
+		unsign_conv.c int_conv.c #hexa_conv.c  percent_conv.c pos_conv.c unsign_conv.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -27,3 +27,4 @@ fclean : clean
 re : fclean all
 
 # make -s && gcc test.c libftprintf.a && ./a.out
+# make -s && gcc main.c libftprintf.a && ./a.out
