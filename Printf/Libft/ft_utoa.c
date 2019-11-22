@@ -6,7 +6,7 @@
 /*   By: tpons <tpons@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 13:19:43 by tpons             #+#    #+#             */
-/*   Updated: 2019/11/20 11:47:59 by tpons            ###   ########.fr       */
+/*   Updated: 2019/11/20 12:53:45 by tpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int		num_length(long n)
 	return (i);
 }
 
-static char		*fill_string(char *str, unsigned int n, int l, long nbr)
+static char		*fill_string(char *str, int l, long nbr)
 {
 	str[--l] = '\0';
 	while (nbr / 10 >= 1)
@@ -49,6 +49,6 @@ char			*ft_utoa(unsigned int n)
 		return (str = ft_strdup("0"));
 	if (!(str = malloc(sizeof(char) * l)))
 		return (0);
-	str = fill_string(str, n, l, nbr);
+	str = fill_string(str, l, nbr);
 	return (str);
 }
