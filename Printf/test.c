@@ -6,7 +6,7 @@
 /*   By: tpons <tpons@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 10:13:52 by tpons             #+#    #+#             */
-/*   Updated: 2019/12/02 16:32:38 by tpons            ###   ########.fr       */
+/*   Updated: 2019/12/02 17:02:22 by tpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		main(void)
 
 	str = "Coucou comment ca va";
 	strb = "Bien et toi ?";
-	   printf("[%20p]", str);
-	ft_printf("[%20p]", str);
+	   printf("[%020%]");
+	// ft_printf("[%20p]", str);
 	return (0);
 }

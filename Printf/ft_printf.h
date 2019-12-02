@@ -6,7 +6,7 @@
 /*   By: tpons <tpons@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 14:08:24 by tpons             #+#    #+#             */
-/*   Updated: 2019/12/02 16:56:57 by tpons            ###   ########.fr       */
+/*   Updated: 2019/12/02 17:12:10 by tpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,7 @@ char				*ft_itoa_base(unsigned int nbr, char *base);
 int					pos_conv(t_flags flags, va_list args);
 int					pos_minus(t_flags flags, int len, char *str);
 char				*ft_ulltoa_base(unsigned long long nbr, char *base);
+
+int					percent_conv(t_flags flags);
 
 #endif

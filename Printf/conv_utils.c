@@ -6,7 +6,7 @@
 /*   By: tpons <tpons@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 14:57:34 by tpons             #+#    #+#             */
-/*   Updated: 2019/12/02 16:51:21 by tpons            ###   ########.fr       */
+/*   Updated: 2019/12/02 17:12:40 by tpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ int	parser_conv(char input, t_flags flags, va_list args)
 		rtn = hexa_conv(flags, args, "0123456789abcdef");
 	else if (input == 'X')
 		rtn = hexa_conv(flags, args, "0123456789ABCDEF");
-	// else if (input == '%')
-	// 	rtn = char_conv(flags, args);
+	else if (input == '%')
+		rtn = percent_conv(flags);
 	return (rtn);
 }
 

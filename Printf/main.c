@@ -6,7 +6,7 @@
 /*   By: tpons <tpons@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 16:19:31 by rchallie          #+#    #+#             */
-/*   Updated: 2019/12/02 16:53:17 by tpons            ###   ########.fr       */
+/*   Updated: 2019/12/02 17:10:24 by tpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -172,55 +172,55 @@ int main()
 	// printf("(%d)\n", printf(">    printf : Ecrire un unsigned int : [%24.15u]", -42));
 	// printf("(%d)\n", ft_printf("> ft_printf : Ecrire un unsigned int : [%24.15u]", -42));
 	
+	// system("echo \"\x1b[33m\"");
+
+	// ft_printf("--------------------------------------------------------------------------------\n");
+	// ft_printf("\n----------------------------------- POINTER ----------------------------------------\n");
+
+	// system("echo \"\x1b[36m\"");
+
+	// char *test = "PLOP";
+	
+	// printf(">    printf : Ecrire un pointer : [%p]\n", &test);
+	// ft_printf("> ft_printf : Ecrire un pointer : [%p]\n", &test);
+	// printf(">    printf : Ecrire un pointer : [%15p]\n", &test);
+	// ft_printf("> ft_printf : Ecrire un pointer : [%15p]\n", &test);
+	// printf(">    printf : Ecrire un pointer : [%-18p]\n", &test);
+	// ft_printf("> ft_printf : Ecrire un pointer : [%-18p]\n", &test);
+	// printf(">    printf : Ecrire un pointer : [%*p]\n", 18, &test);
+	// ft_printf("> ft_printf : Ecrire un pointer : [%*p]\n", 18, &test);
+	// printf(">    printf : Ecrire un pointer : [%-*p]\n", 18, &test);
+	// ft_printf("> ft_printf : Ecrire un pointer : [%-*p]\n", 18, &test);
+	// printf(">    printf : Ecrire un pointer : [%8.p]\n", &test);
+	// ft_printf("> ft_printf : Ecrire un pointer : [%8.p]\n", &test);
+	// printf(">    printf : Ecrire un pointer : [%18.p]\n", &test);
+	// ft_printf("> ft_printf : Ecrire un pointer : [%18.p]\n", &test);
+	// printf(">    printf : Ecrire un pointer : [%*.p]\n", 16, &test);
+	// ft_printf("> ft_printf : Ecrire un pointer : [%*.p]\n", 16,  &test);
+	// printf(">    printf : Ecrire un pointer : [%-*.p]\n", 16, &test);
+	// ft_printf("> ft_printf : Ecrire un pointer : [%-*.p]\n", 16,  &test);
+
 	system("echo \"\x1b[33m\"");
 
 	ft_printf("--------------------------------------------------------------------------------\n");
-	ft_printf("\n----------------------------------- POINTER ----------------------------------------\n");
+	ft_printf("\n----------------------------------- %% ----------------------------------------\n");
 
 	system("echo \"\x1b[36m\"");
-
-	char *test = "PLOP";
 	
-	printf(">    printf : Ecrire un pointer : [%p]\n", &test);
-	ft_printf("> ft_printf : Ecrire un pointer : [%p]\n", &test);
-	printf(">    printf : Ecrire un pointer : [%15p]\n", &test);
-	ft_printf("> ft_printf : Ecrire un pointer : [%15p]\n", &test);
-	printf(">    printf : Ecrire un pointer : [%-18p]\n", &test);
-	ft_printf("> ft_printf : Ecrire un pointer : [%-18p]\n", &test);
-	printf(">    printf : Ecrire un pointer : [%*p]\n", 18, &test);
-	ft_printf("> ft_printf : Ecrire un pointer : [%*p]\n", 18, &test);
-	printf(">    printf : Ecrire un pointer : [%-*p]\n", 18, &test);
-	ft_printf("> ft_printf : Ecrire un pointer : [%-*p]\n", 18, &test);
-	printf(">    printf : Ecrire un pointer : [%8.p]\n", &test);
-	ft_printf("> ft_printf : Ecrire un pointer : [%8.p]\n", &test);
-	printf(">    printf : Ecrire un pointer : [%18.p]\n", &test);
-	ft_printf("> ft_printf : Ecrire un pointer : [%18.p]\n", &test);
-	printf(">    printf : Ecrire un pointer : [%*.p]\n", 16, &test);
-	ft_printf("> ft_printf : Ecrire un pointer : [%*.p]\n", 16,  &test);
-	printf(">    printf : Ecrire un pointer : [%-*.p]\n", 16, &test);
-	ft_printf("> ft_printf : Ecrire un pointer : [%-*.p]\n", 16,  &test);
+	printf("(%d)\n", printf(">    printf : Ecrire un pourcent : [%%]"));
+	printf("(%d)\n", ft_printf("> ft_printf : Ecrire un pourcent : [%%]"));
+	printf("(%d)\n", printf(">    printf : Ecrire un pourcent : [%20%]"));
+	printf("(%d)\n", ft_printf("> ft_printf : Ecrire un pourcent : [%20%]"));
+	printf("(%d)\n", printf(">    printf : Ecrire un pourcent : [%012%]"));
+	printf("(%d)\n", ft_printf("> ft_printf : Ecrire un pourcent : [%012%]"));
+	printf("(%d)\n", printf(">    printf : Ecrire un pourcent : [%-12%]"));
+	printf("(%d)\n", ft_printf("> ft_printf : Ecrire un pourcent : [%-12%]"));
+	printf("(%d)\n", printf(">    printf : Ecrire un pourcent : [%*%]", 5));
+	printf("(%d)\n", ft_printf("> ft_printf : Ecrire un pourcent : [%*%]", 5));
+	printf("(%d)\n", printf(">    printf : Ecrire un pourcent : [%-*%]", 5));
+	printf("(%d)\n", ft_printf("> ft_printf : Ecrire un pourcent : [%-*%]", 5));
 
 	system("echo \"\x1b[33m\"");
-
-	// ft_printf("--------------------------------------------------------------------------------\n");
-	// ft_printf("\n----------------------------------- %% ----------------------------------------\n");
-
-	// system("echo \"\x1b[36m\"");
-	
-	// printf("(%d)\n", printf(">    printf : Ecrire un pourcent : [%%]"));
-	// printf("(%d)\n", ft_printf("> ft_printf : Ecrire un pourcent : [%%]"));
-	// printf("(%d)\n", printf(">    printf : Ecrire un pourcent : [%20%]"));
-	// printf("(%d)\n", ft_printf("> ft_printf : Ecrire un pourcent : [%20%]"));
-	// printf("(%d)\n", printf(">    printf : Ecrire un pourcent : [%012%]"));
-	// printf("(%d)\n", ft_printf("> ft_printf : Ecrire un pourcent : [%012%]"));
-	// printf("(%d)\n", printf(">    printf : Ecrire un pourcent : [%-12%]"));
-	// printf("(%d)\n", ft_printf("> ft_printf : Ecrire un pourcent : [%-12%]"));
-	// printf("(%d)\n", printf(">    printf : Ecrire un pourcent : [%*%]", 5));
-	// printf("(%d)\n", ft_printf("> ft_printf : Ecrire un pourcent : [%*%]", 5));
-	// printf("(%d)\n", printf(">    printf : Ecrire un pourcent : [%-*%]", 5));
-	// printf("(%d)\n", ft_printf("> ft_printf : Ecrire un pourcent : [%-*%]", 5));
-
-	// system("echo \"\x1b[33m\"");
 
 	// ft_printf("--------------------------------------------------------------------------------\n");
 	// ft_printf("\n--------------------------------- Hexa (min) --------------------------------------\n");
