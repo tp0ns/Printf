@@ -6,7 +6,7 @@
 /*   By: tpons <tpons@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 13:53:37 by tpons             #+#    #+#             */
-/*   Updated: 2019/12/02 16:19:04 by tpons            ###   ########.fr       */
+/*   Updated: 2019/12/02 16:52:33 by tpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	num_length(unsigned int n, int b)
 	return (i);
 }
 
-int		put_nbr(unsigned int nb, char *base, char *str, int l)
+int			put_nbr(unsigned int nb, char *base, char *str, int l)
 {
 	int	b;
 
@@ -47,11 +47,9 @@ char		*ft_itoa_base(unsigned int nbr, char *base)
 	int		b;
 	char	*str;
 	int		l;
-	int		i;
 
 	b = ft_strlen(base);
 	l = num_length(nbr, b);
-	i = 0;
 	if (!(str = malloc(sizeof(char) * l + 1)))
 		return (0);
 	str[l] = '\0';
