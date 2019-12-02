@@ -6,7 +6,7 @@
 /*   By: tpons <tpons@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 14:57:34 by tpons             #+#    #+#             */
-/*   Updated: 2019/11/22 17:18:51 by tpons            ###   ########.fr       */
+/*   Updated: 2019/12/02 16:51:21 by tpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int	parser_conv(char input, t_flags flags, va_list args)
 		rtn = char_conv(flags, args);
 	else if (input == 's')
 		rtn = str_conv(flags, args);
-	// else if (input == 'p')
-	// 	rtn = pos_conv(flags, args);
+	else if (input == 'p')
+		rtn = pos_conv(flags, args);
 	else if (input == 'd' || input == 'i')
 		rtn = int_conv(flags, args);
 	else if (input == 'u')
