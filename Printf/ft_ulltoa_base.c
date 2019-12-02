@@ -6,7 +6,7 @@
 /*   By: tpons <tpons@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/02 16:42:25 by tpons             #+#    #+#             */
-/*   Updated: 2019/12/02 16:51:20 by tpons            ###   ########.fr       */
+/*   Updated: 2019/12/02 17:16:32 by tpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	ullnum_length(unsigned long long n, int b)
 	return (i);
 }
 
-int		put_ullnbr(unsigned long long nb, char *base, char *str, int l)
+int			put_ullnbr(unsigned long long nb, char *base, char *str, int l)
 {
 	int	b;
 
@@ -42,7 +42,7 @@ int		put_ullnbr(unsigned long long nb, char *base, char *str, int l)
 	}
 }
 
-char	*ft_ulltoa_base(unsigned long long nbr, char *base)
+char		*ft_ulltoa_base(unsigned long long nbr, char *base)
 {
 	int		b;
 	char	*str;

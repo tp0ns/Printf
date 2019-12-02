@@ -6,7 +6,7 @@
 /*   By: tpons <tpons@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 16:15:20 by tpons             #+#    #+#             */
-/*   Updated: 2019/11/22 13:33:17 by tpons            ###   ########.fr       */
+/*   Updated: 2019/12/02 17:17:06 by tpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ int	int_adjust(t_flags flags, int len, int nb)
 	rtn = 0;
 	if (flags.zero)
 	{
-			if (nb < 0)
-			{
-				write(1, "-", 1);
-				rtn++;
-			}
-			rtn += ft_adjust(flags.width - len, '0');
+		if (nb < 0)
+		{
+			write(1, "-", 1);
+			rtn++;
+		}
+		rtn += ft_adjust(flags.width - len, '0');
 	}
 	else if (flags.precision >= len)
 	{
