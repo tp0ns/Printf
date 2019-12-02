@@ -6,7 +6,7 @@
 /*   By: tpons <tpons@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 16:16:26 by tpons             #+#    #+#             */
-/*   Updated: 2019/12/02 16:54:54 by tpons            ###   ########.fr       */
+/*   Updated: 2019/12/02 17:10:27 by tpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,6 @@ int	pos_conv(t_flags flags, va_list args)
 		str = ft_ulltoa_base(nb, "0123456789abcdef");
 	len = ft_strlen(str);
 	rtn = 0;
-	if (flags.precision == 0 && *str == '0')
-	{
-		ft_adjust(flags.width, ' ');
-		return (0);
-	}
 	rtn += pos_minus(flags, len, str);
 	free(str);
 	return (rtn);
