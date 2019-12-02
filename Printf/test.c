@@ -6,34 +6,14 @@
 /*   By: tpons <tpons@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 10:13:52 by tpons             #+#    #+#             */
-/*   Updated: 2019/11/22 17:06:44 by tpons            ###   ########.fr       */
+/*   Updated: 2019/12/02 16:07:32 by tpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "ft_printf.h"
+#include "ft_printf.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-
-
-void	ft_putstr(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		write(1, &str[i++], 1);
-}
-
-size_t	ft_strlen(const char *s)
-{
-	size_t i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
 
 static int	num_length(unsigned int n, int b)
 {
@@ -48,22 +28,21 @@ static int	num_length(unsigned int n, int b)
 	return (i);
 }
 
-int		put_nbr(unsigned int nb, char *base, int b, char *str, int l)
+int		put_nbr(unsigned int nb, char *base, char *str, int l)
 {
+	int	b;
+
+	b = ft_strlen(base);
 	if (l == 0)
-	{	
+	{
 		str[l] = base[nb % b];
 		return (0);
 	}
 	else
 	{
 		str[l] = base[nb % b];
-		return (put_nbr(nb / b, base, b, str, --l));
+		return (put_nbr(nb / b, base, str, --l));
 	}
-	// if (nb >= b)
-	// 	put_nbr(nb / b, base, b, str++);
-	// *str = base[nb % b];
-	// printf("|%s|", str); //psidnfpsinfidnf
 }
 
 char		*ft_itoa_base(unsigned int nbr, char *base)
@@ -79,13 +58,13 @@ char		*ft_itoa_base(unsigned int nbr, char *base)
 	if (!(str = malloc(sizeof(char) * l + 1)))
 		return (0);
 	str[l] = '\0';
-	put_nbr(nbr, base, b, str, l - 1);
+	put_nbr(nbr, base, str, l - 1);
 	return (str);
 }
 
 int	main()
 {
-	printf("|%s|", ft_itoa_base(42, "01"));
+	printf("|%s|", ft_itoa_base(429, "0123456789abcdef"));
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: tpons <tpons@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 16:17:05 by tpons             #+#    #+#             */
-/*   Updated: 2019/11/22 17:28:34 by tpons            ###   ########.fr       */
+/*   Updated: 2019/12/02 16:19:03 by tpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,16 @@ int	hexa_minus(t_flags flags, int len, char *str)
 
 int	hexa_conv(t_flags flags, va_list args, char *base)
 {
-	char	*str;
-	int		len;
-	int		rtn;
+	char			*str;
+	int				len;
+	int				rtn;
+	unsigned int	nb;
 
-	str = ft_itoa_base(va_arg(args, unsigned int), base);
+	nb = va_arg(args, unsigned int);
+	if (!nb)
+		str = ft_strdup("0");
+	else
+		str = ft_itoa_base(nb, base);
 	len = ft_strlen(str);
 	rtn = 0;
 	if (flags.precision == 0 && *str == '0')
