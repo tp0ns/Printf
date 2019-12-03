@@ -6,7 +6,7 @@
 /*   By: tpons <tpons@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 14:50:30 by tpons             #+#    #+#             */
-/*   Updated: 2019/11/21 12:10:15 by tpons            ###   ########.fr       */
+/*   Updated: 2019/12/03 13:00:57 by tpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,14 @@ t_flags	treat_flags(char input, t_flags flags, va_list args)
 		if (flags.point)
 			flags.precision = va_arg(args, int);
 		else if (flags.width < 1)
+		{
 			flags.width = va_arg(args, int);
+			if (flags.width < 0)
+			{
+				flags.width *= -1;
+				flags.minus = 1;
+			}
+		}
 	}
 	return (flags);
 }
