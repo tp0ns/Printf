@@ -6,7 +6,7 @@
 /*   By: tpons <tpons@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 14:50:30 by tpons             #+#    #+#             */
-/*   Updated: 2019/12/03 13:00:57 by tpons            ###   ########.fr       */
+/*   Updated: 2019/12/03 14:02:21 by tpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ t_flags	treat_flags(char input, t_flags flags, va_list args)
 {
 	if (input == '-')
 		flags.minus = 1;
-	else if (input == '0' && flags.width < 1)
+	else if (input == '0' && flags.width < 1 && !flags.point)
 		flags.zero = 1;
 	else if (ft_isdigit(input) && !flags.point)
 		flags.width = (flags.width * 10) + (input - '0');
@@ -44,9 +44,7 @@ t_flags	treat_flags(char input, t_flags flags, va_list args)
 		flags.precision = 0;
 	}
 	else if (ft_isdigit(input) && flags.point)
-	{
 		flags.precision = (flags.precision * 10) + (input - '0');
-	}
 	else if (input == '*')
 	{
 		if (flags.point)
