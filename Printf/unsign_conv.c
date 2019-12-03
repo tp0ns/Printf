@@ -6,7 +6,7 @@
 /*   By: tpons <tpons@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 16:16:03 by tpons             #+#    #+#             */
-/*   Updated: 2019/11/22 10:53:42 by tpons            ###   ########.fr       */
+/*   Updated: 2019/12/03 13:26:32 by tpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,8 @@ int	unsign_conv(t_flags flags, va_list args)
 	rtn = 0;
 	if (flags.precision == 0 && *str == '0')
 	{
-		ft_adjust(flags.width, ' ');
-		return (0);
+		rtn += ft_adjust(flags.width, ' ');
+		return (rtn);
 	}
 	rtn += unsign_minus(flags, len, str);
 	free(str);
