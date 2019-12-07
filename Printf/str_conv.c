@@ -6,13 +6,13 @@
 /*   By: tpons <tpons@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 16:14:36 by tpons             #+#    #+#             */
-/*   Updated: 2019/12/03 14:33:34 by tpons            ###   ########.fr       */
+/*   Updated: 2019/12/07 15:33:51 by tpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	str_precision(char *str, int len, int precision, int mod)
+int		str_precision(char *str, int len, int precision, int mod)
 {
 	int	i;
 
@@ -41,7 +41,7 @@ int	str_precision(char *str, int len, int precision, int mod)
 	return (i);
 }
 
-int	str_adjust(int zero, int width)
+int		str_adjust(int zero, int width)
 {
 	int rtn;
 
@@ -53,7 +53,16 @@ int	str_adjust(int zero, int width)
 	return (rtn);
 }
 
-int	str_conv(t_flags flags, va_list args)
+char	*str_special(char *str, t_flags flags)
+{
+	if (!str && flags.precision)
+		str = ft_strdup("(null)");
+	else if (!str && !flags.precision)
+		str = ft_strdup("");
+	return (str);
+}
+
+int		str_conv(t_flags flags, va_list args)
 {
 	char	*str;
 	int		len;
@@ -62,10 +71,7 @@ int	str_conv(t_flags flags, va_list args)
 
 	rtn = 0;
 	str = va_arg(args, char *);
-	if (!str && flags.precision)
-		str = ft_strdup("(null)");
-	else if (!str && !flags.precision)
-		str = ft_strdup("");
+	str = str_special(str, flags);
 	len = ft_strlen(str);
 	howm = str_precision(str, len, flags.precision, 0);
 	if (flags.minus && flags.width > howm)
@@ -80,5 +86,6 @@ int	str_conv(t_flags flags, va_list args)
 	}
 	else
 		rtn += str_precision(str, len, flags.precision, 1);
+	free(str);
 	return (rtn);
 }
