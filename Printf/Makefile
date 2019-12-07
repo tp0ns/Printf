@@ -27,5 +27,3 @@ re : fclean all
 
 %.o: %.c
 	$(CC) $(FLAGS) -I ft_printf.h -c $<  -o $(<:.c=.o)
-# make -s && gcc test.c libftprintf.a && ./a.out
-# make -s && gcc main.c libftprintf.a && ./a.out
