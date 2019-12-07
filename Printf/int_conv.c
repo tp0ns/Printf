@@ -6,7 +6,7 @@
 /*   By: tpons <tpons@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 16:15:20 by tpons             #+#    #+#             */
-/*   Updated: 2019/12/03 11:45:06 by tpons            ###   ########.fr       */
+/*   Updated: 2019/12/07 15:00:26 by tpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	int_precision(t_flags flags, int len, int nb)
 
 	i = 0;
 	rtn = 0;
-	if (nb < 0 && flags.precision <= len && !flags.zero)
+	if (nb < 0 && flags.precision < len && !flags.zero)
 	{
 		write(1, "-", 1);
 		return (1);
