@@ -6,7 +6,7 @@
 /*   By: tpons <tpons@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 16:14:36 by tpons             #+#    #+#             */
-/*   Updated: 2019/12/07 15:33:51 by tpons            ###   ########.fr       */
+/*   Updated: 2019/12/09 12:24:18 by tpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,5 @@ int		str_conv(t_flags flags, va_list args)
 	}
 	else
 		rtn += str_precision(str, len, flags.precision, 1);
-	free(str);
 	return (rtn);
 }
